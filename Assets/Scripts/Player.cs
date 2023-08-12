@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     private Rigidbody rb;
     [SerializeField]
     private float velocity;
+
+    public float mouseSensibility = 2.0f;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -19,17 +21,21 @@ public class Player : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
 
 
-        if (horizontalInput > 0)
-        {
-            rb.MovePosition(Vector3.right * horizontalInput * velocity * Time.deltaTime);
-        }
-        if (verticalInput > 0)
-        {
-            rb.MovePosition(Vector3.forward * verticalInput * velocity * Time.deltaTime);
-        }
+        Vector3 movimiento = new Vector3(horizontalInput, 0.0f, verticalInput);
 
-        
 
-        
+        Vector3 movimientoGlobal = transform.TransformDirection(movimiento);
+
+        rb.AddForce(movimientoGlobal * velocity);
+
+        float mouseMovementX = Input.GetAxis("Mouse X");
+        Vector3 rotacion = new Vector3(0.0f, mouseMovementX * mouseSensibility, 0.0f);
+
+        // Aplicar la rotación localmente al transform del cubo
+        transform.Rotate(rotacion);
+
+
+
+
     }
 }
