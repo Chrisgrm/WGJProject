@@ -24,12 +24,16 @@ public class Door : MonoBehaviour
         if(player.Getkeys() >= 3)
         {
             print("se abre la puerta");
+            player.DisableMovement();
         }
         else
         {
             uIManager.ActiveDoorClosed();
         }
     }
-
+    private void OnTriggerExit(Collider other)
+    {
+        uIManager.DeactiveDoorClosed();
+    }
 
 }

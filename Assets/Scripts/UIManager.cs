@@ -32,6 +32,11 @@ public class UIManager : MonoBehaviour
         doorClosedPanel.SetActive(true);
     }
 
+    internal void DeactiveDoorClosed()
+    {
+        doorClosedPanel.SetActive(false);
+    }
+
     // Update is called once per frame
     void Update()
     {
