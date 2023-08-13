@@ -22,7 +22,7 @@ public class NPC : MonoBehaviour
     void Start()
     {
         cameraController = GameObject.Find("CameraController").GetComponent<CameraController>();
-        player = GameObject.Find("Player").GetComponentInChildren<Player>();
+        player = GameObject.Find("PlayerObject").GetComponentInChildren<Player>();
         uIManager = GameObject.Find("Canvas").GetComponent<UIManager>();
     }
 
@@ -41,11 +41,7 @@ public class NPC : MonoBehaviour
                 }
                 else
                 {
-                    uIManager.EndDialog();
-                    cameraController.Switch2ThirdPerson();
-                    player.SetThirdPerson();
-                    isConversationActive = false;
-                    player.EnableMovement();
+                    StopConversation();
                 }
             }
 
@@ -77,6 +73,24 @@ public class NPC : MonoBehaviour
         StartConversation();
 
         
+    }
+
+    private void StopConversation()
+    {
+        uIManager.EndDialog();
+        currentSentenceIndex = 0;
+        cameraController.Switch2ThirdPerson();
+        StartView();
+        player.SetThirdPerson();
+        isConversationActive = false;
+        player.EnableMovement();
+    }
+
+    private void StartView()
+    {
+        cameraController.SetTopDownCamera(npcId);
+        cameraController.Switch2TopDown();
+
     }
 
     private void StartConversation()

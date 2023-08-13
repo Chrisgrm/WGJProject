@@ -17,20 +17,33 @@ public class CameraController : MonoBehaviour
     private int activeCameraIndex = 0;
     private CinemachineVirtualCamera previousCamera;
 
+    public Transform topDownReferenceNPC0;
+    public Transform topDownReferenceNPC1;
+    public Transform topDownReferenceNPC2;
+
     private void Start()
     {
 
-        SwitchCamera(activeCameraIndex);
-        cameraNPC0.SetActive(false);
-
-
         //SwitchCamera(activeCameraIndex);
-        cameraFirstPerson.SetActive(false);
+        
+        DeactivateAllCameras();
+        //SwitchCamera(activeCameraIndex);   
         cameraThirdPerson.SetActive(true);
-        cameraTopDown.SetActive(false);
+ 
+    }
 
+    private void DeactivateAllCameras()
+    {
+        cameraFirstPerson.SetActive(false);
+        cameraThirdPerson.SetActive(false);
+        cameraTopDown.SetActive(false);
+        cameraNPC0.SetActive(false);
         cameraNPC1.SetActive(false);
         cameraNPC2.SetActive(false);
+
+        combatCamera.gameObject.SetActive(false);
+        combatCamera1.gameObject.SetActive(false);
+        combatCamera2.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -53,19 +66,18 @@ public class CameraController : MonoBehaviour
 
     public void ActivateCameraNPC(int v)
     {
-        cameraFirstPerson.SetActive(false);
-        cameraThirdPerson.SetActive(false);
+        DeactivateAllCameras();
         switch (v)
         {
-            case 1:
+            case 0:
                 cameraNPC0.SetActive(true);
                 break;
 
-            case 2:
+            case 1:
                 cameraNPC1.SetActive(true);
                 break;
-            case 3:
-                cameraNPC0.SetActive(true);
+            case 2:
+                cameraNPC2.SetActive(true);
                 break;
 
         }
@@ -76,6 +88,25 @@ public class CameraController : MonoBehaviour
         firstPersonCamera.gameObject.SetActive(index == 0);
         thirdPersonCamera.gameObject.SetActive(index == 1);
         topDownCamera.gameObject.SetActive(index == 2);
+    }
+
+    internal void SetTopDownCamera(int npcId)
+    {
+        switch (npcId) {
+            case 0:
+                topDownCamera.LookAt = topDownReferenceNPC0;
+                topDownCamera.Follow = topDownReferenceNPC0;
+                break;
+            case 1:
+                topDownCamera.LookAt = topDownReferenceNPC1;
+                topDownCamera.Follow = topDownReferenceNPC1;
+                break;
+            case 2:
+                topDownCamera.LookAt = topDownReferenceNPC2;
+                topDownCamera.Follow = topDownReferenceNPC2;
+                break;
+        
+        }
     }
 
     public void Switch2FirstPerson()
@@ -93,6 +124,7 @@ public class CameraController : MonoBehaviour
     } 
     public void Switch2TopDown()
     {
+       
         cameraFirstPerson.SetActive(false);
         cameraThirdPerson.SetActive(false);
         cameraTopDown.SetActive(true);

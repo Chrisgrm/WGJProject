@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
         rb.AddForce(globalMovement * speed);
         float rotation = horizontalInput * rotationSpeed * Time.deltaTime;
 
-        print(rotation);
+       
         transform.Rotate(Vector3.up, rotation);
     }
 
