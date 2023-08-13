@@ -24,7 +24,6 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         isFirstPerson = true;
-        isMoving = false;
     }
 
     // Update is called once per frame
@@ -34,16 +33,15 @@ public class Player : MonoBehaviour
         {
             FirstPersonMovement();
         }
+        else
+        {
+            ThirdPersonMovement();
+        }
 
         if (Input.GetKeyDown(KeyCode.F))
         {
             isFirstPerson = !isFirstPerson;
         }
-    }
-
-    public void BlockMovement()
-    {
-        blokedMovement = true;
     }
 
     private void ThirdPersonMovement()
@@ -60,36 +58,6 @@ public class Player : MonoBehaviour
         transform.Rotate(Vector3.up, rotation);
     }
 
-    public void MovePlayerAutomatic(Transform target)
-    {
-        StartCoroutine(MovePlayerAutomaticCorroutine(target));
-        print("puta");
-    }
-    IEnumerator MovePlayerAutomaticCorroutine(Transform target)
-    {
-        isMoving = true;
-        Vector3 initialPosition = transform.position;
-        Vector3 targetDirection = (target.position - initialPosition);
-
-        print(target.position);
-        
-        while (Vector3.Distance(transform.position, target.position) > 0.5f)
-        {
-            Vector3 movement = targetDirection.normalized* speed * Time.deltaTime;
-            print("movimiento: "+ movement);
-
-            // Mueve al personaje hacia la posici�n deseada
-
-            transform.Translate(movement);
-            //rb.MovePosition(movement);
-
-            yield return null;
-        }
-
-        isMoving = false;
-
-
-    }
     private void FirstPersonMovement()
     {
         if (!canMove) return;

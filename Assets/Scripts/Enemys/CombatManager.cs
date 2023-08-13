@@ -21,7 +21,7 @@ public class CombatManager : MonoBehaviour
 
     public Animator panelAnimator; // Animator del panel
     public GameObject combatPanel; // Panel de combate
-    public GameObject playerPosition; // Posición del jugador en 2D
+    public GameObject playerPosition; // Posición del jugador
 
     public Player playerController; // Script de control del jugador
     public CameraController cameraController;

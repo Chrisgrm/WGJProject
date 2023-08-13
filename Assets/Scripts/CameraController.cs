@@ -12,7 +12,7 @@ public class CameraController : MonoBehaviour
         combatCamera1,
         combatCamera2;
 
-    public GameObject cameraThirdPerson, cameraFirstPerson, cameraTopDown, cameraNPC1, cameraNPC2, cameraNPC3;
+    public GameObject cameraThirdPerson, cameraFirstPerson, cameraTopDown, cameraNPC0, cameraNPC1, cameraNPC2;
 
     private int activeCameraIndex = 0;
     private CinemachineVirtualCamera previousCamera;
@@ -20,9 +20,9 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         SwitchCamera(activeCameraIndex);
+        cameraNPC0.SetActive(false);
         cameraNPC1.SetActive(false);
         cameraNPC2.SetActive(false);
-        cameraNPC3.SetActive(false);
     }
 
     private void Update()
@@ -45,16 +45,14 @@ public class CameraController : MonoBehaviour
         switch (v)
         {
             case 1:
-                cameraNPC1.SetActive(true);
-                print("camara 1");
-
+                cameraNPC0.SetActive(true);
                 break;
 
             case 2:
-                cameraNPC2.SetActive(true);
+                cameraNPC1.SetActive(true);
                 break;
             case 3:
-                cameraNPC3.SetActive(true);
+                cameraNPC0.SetActive(true);
                 break;
 
         }
