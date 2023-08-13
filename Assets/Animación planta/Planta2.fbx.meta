@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8326b13a5a988fa4a8a38ab48ffff40c
+guid: 49e5cb9c650400140b845b431f7a38df
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -33,7 +33,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: planta2
       takeName: Take 001
       internalID: 1827226128182048838
       firstFrame: 0
