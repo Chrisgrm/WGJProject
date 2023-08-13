@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private float speed;
+    public Transform targetCam;
     float horizontalInput;
     float verticalInput;
 
@@ -24,7 +25,7 @@ public class Player : MonoBehaviour
     Transform targetPosition;
     int keyFragments;
 
-    public Transform targetCam;
+
     public float mouseSensibility = 2.0f;
     public PlayerAnimationController animationController;
 
@@ -35,11 +36,14 @@ public class Player : MonoBehaviour
 
         isFirstPerson = false;
         isMoving = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
         if (!blokedMovement)
         {
             if (isFirstPerson)
@@ -50,6 +54,7 @@ public class Player : MonoBehaviour
             {
                 ThirdPersonMovement();
             }
+
         }
         else
         {
@@ -87,8 +92,7 @@ public class Player : MonoBehaviour
 
     private void ThirdPersonMovement()
     {
-        if (!canMove)
-            return;
+        if (!canMove) return;
 
         GetInput();
         Vector3 movement = new Vector3(0, 0.0f, verticalInput);
@@ -110,9 +114,8 @@ public class Player : MonoBehaviour
 
     private void FirstPersonMovement()
     {
-        if (!canMove)
-            return;
-
+        if (!canMove) return;
+        
         GetInput();
         Vector3 movimiento = new Vector3(horizontalInput, 0.0f, verticalInput);
         Vector3 movimientoGlobal = transform.TransformDirection(movimiento);
@@ -144,7 +147,6 @@ public class Player : MonoBehaviour
     {
         canMove = true;
     }
-<<<<<<< HEAD
 
     internal void GetKey()
     {
@@ -155,6 +157,3 @@ public class Player : MonoBehaviour
         return keyFragments;
     }
 }
-=======
-}
->>>>>>> local
