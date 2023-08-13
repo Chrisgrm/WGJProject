@@ -159,7 +159,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2078693079}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 340732594}
   - component: {fileID: 340732593}
   - component: {fileID: 340732597}
+  - component: {fileID: 340732598}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -320,6 +321,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ea7299445171a3409283785df69c158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &340732598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340732592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 480bcba0c91a69842820ce9c41cbbbd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &621602805
@@ -996,9 +1009,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 331449374}
   - {fileID: 133253169}
   - {fileID: 2136186249}
-  - {fileID: 331449374}
   m_Father: {fileID: 340732596}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1028,7 +1041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6471149125956073969, guid: 904688a56e13d6c42b8de8a0cbd04dac, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6471149125956073969, guid: 904688a56e13d6c42b8de8a0cbd04dac, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1113,7 +1126,7 @@ PrefabInstance:
     - target: {fileID: 6471149125956073970, guid: 904688a56e13d6c42b8de8a0cbd04dac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 340732597}
+      objectReference: {fileID: 340732598}
     - target: {fileID: 6471149125956073970, guid: 904688a56e13d6c42b8de8a0cbd04dac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1124,7 +1137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6471149125956073970, guid: 904688a56e13d6c42b8de8a0cbd04dac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MainMenu, Assembly-CSharp
+      value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6471149125956073970, guid: 904688a56e13d6c42b8de8a0cbd04dac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1170,7 +1183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6471149125956073969, guid: 904688a56e13d6c42b8de8a0cbd04dac, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6471149125956073969, guid: 904688a56e13d6c42b8de8a0cbd04dac, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1283,7 +1296,7 @@ PrefabInstance:
     - target: {fileID: 6471149125956073970, guid: 904688a56e13d6c42b8de8a0cbd04dac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 340732597}
+      objectReference: {fileID: 340732598}
     - target: {fileID: 6471149125956073970, guid: 904688a56e13d6c42b8de8a0cbd04dac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1294,7 +1307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6471149125956073970, guid: 904688a56e13d6c42b8de8a0cbd04dac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MainMenu, Assembly-CSharp
+      value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6471149125956073970, guid: 904688a56e13d6c42b8de8a0cbd04dac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

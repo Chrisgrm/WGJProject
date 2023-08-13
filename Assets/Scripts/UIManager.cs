@@ -169,14 +169,20 @@ public class UIManager : MonoBehaviour
     }
 
     public void ActiveKeyImage(int cantidad) {
+        print("cantidad: " + cantidad);
         if (cantidad == 1)
         {
             key1Image.gameObject.SetActive(true);
-        }        if (cantidad == 2)
+            print("keyimage1");
+        }     
+        if (cantidad == 2)
         {
             key2Image.gameObject.SetActive(true);
-        }        if (cantidad == 3)
+            print("keyimage2");
+        }      
+        if (cantidad == 3)
         {
+            print("keyimage3");
             key3Image.gameObject.SetActive(true);
         }
     }

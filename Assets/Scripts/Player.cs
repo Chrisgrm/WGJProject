@@ -186,6 +186,7 @@ public class Player : MonoBehaviour
     {
         keyFragments++;
         uIManager.ActiveInGameKey();
+        print("una key");
         uIManager.ActiveKeyImage(keyFragments);
     }
     public int Getkeys()

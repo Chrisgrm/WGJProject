@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
@@ -42,6 +43,8 @@ public class Door : MonoBehaviour
 
         // Esperar mientras el desvanecimiento ocurre
         yield return new WaitForSeconds(1.0f); // Ajustar la duración según la animación
+        SceneManager.LoadScene(2);
+
 
         // Aquí puedes colocar cualquier acción adicional, como cargar una nueva escena
 
