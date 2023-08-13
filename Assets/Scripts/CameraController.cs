@@ -113,7 +113,7 @@ public class CameraController : MonoBehaviour
     {
         cameraFirstPerson.SetActive(true);
         cameraThirdPerson.SetActive(false);
-        cameraTopDown.SetActive(true);
+        cameraTopDown.SetActive(false);
     } 
     public void Switch2ThirdPerson()
 

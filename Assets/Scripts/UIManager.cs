@@ -10,16 +10,27 @@ public class UIManager : MonoBehaviour
     public TMP_Text dialogueText;
     public GameObject dialogePanel;
     public GameObject inputField;
+    public GameObject enemyAttackText;
+    public GameObject combatPanel;
+    public Transform enemy0WordPosition;
+    public Transform enemy1WordPosition;
+    public Transform enemy2WordPosition;
+    public GameObject doorClosedPanel;
 
- 
 
     // Start is called before the first frame update
     void Start()
     {
         dialogePanel.SetActive(false);
         inputField.SetActive(false);
-        
-}
+        combatPanel.SetActive(false);
+
+    }
+
+    internal void ActiveDoorClosed()
+    {
+        doorClosedPanel.SetActive(true);
+    }
 
     // Update is called once per frame
     void Update()
@@ -27,6 +38,23 @@ public class UIManager : MonoBehaviour
         
     }
 
+    public void ActivateBattle()
+    {
+        enemyAttackText.GetComponent<TMP_Text>().text = "";
+        enemyAttackText.transform.position = enemy0WordPosition.position;
+        combatPanel.SetActive(true);
+    } 
+
+    public void ChangeEnemyText(string text)
+    {
+        enemyAttackText.GetComponent<TMP_Text>().text = text;
+    }
+    
+    public void DeactivateBattle()
+    {
+        combatPanel.SetActive(false);
+        DeactivateInput();
+    }
     public void ActivateDialog(string textoInicial)
     {
         dialogePanel.SetActive(true);
@@ -51,19 +79,26 @@ public class UIManager : MonoBehaviour
 
     IEnumerator ActivateInputCorroutine()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         inputField.SetActive(true);
-        print("holaa");
+        print("Se puede escribir");
         TMP_InputField input = inputField.GetComponentInChildren<TMP_InputField>();
         input.Select();
         input.ActivateInputField();
     }
     public void DeactivateInput()
     {
+        print("final");
         inputField.SetActive(false);
         TMP_InputField input = inputField.GetComponentInChildren<TMP_InputField>();     
         input.text = "";
 
+    }
+
+    public void RestarInput()
+    {
+        TMP_InputField input = inputField.GetComponentInChildren<TMP_InputField>();
+        input.text = "";
     }
 
     public string GetInputText()

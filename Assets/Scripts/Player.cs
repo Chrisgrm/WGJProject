@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     bool blokedMovement;
     bool isMoving;
     Transform targetPosition;
+    int keyFragments;
 
 
     public float mouseSensibility = 2.0f;
@@ -58,10 +59,10 @@ public class Player : MonoBehaviour
             ThirdPersonMovement();
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            isFirstPerson = !isFirstPerson;
-        }
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
+        //    isFirstPerson = !isFirstPerson;
+        //}
 
     }
 
@@ -69,6 +70,12 @@ public class Player : MonoBehaviour
     {
         isFirstPerson = false;
         canChangeSize = true;
+    } 
+    
+    public void SetFirstPerson()
+    {
+        isFirstPerson = true;
+       //canChangeSize = true;
     }
 
     //public void BlockMovement()
@@ -115,5 +122,14 @@ public class Player : MonoBehaviour
     public void EnableMovement()
     {
         canMove = true;
+    }
+
+    internal void GetKey()
+    {
+        keyFragments++;
+    }
+    public int Getkeys()
+    {
+        return keyFragments;
     }
 }
