@@ -26,7 +26,7 @@ public class NPC : MonoBehaviour
         cameraController = GameObject.Find("CameraController").GetComponent<CameraController>();
         player = GameObject.Find("PlayerObject").GetComponentInChildren<Player>();
         uIManager = GameObject.Find("Canvas").GetComponent<UIManager>();
-        animationController = GetComponent<PlayerAnimationController>();
+        animationController = player.GetComponent<PlayerAnimationController>();
         canTalk = true;
     }
 

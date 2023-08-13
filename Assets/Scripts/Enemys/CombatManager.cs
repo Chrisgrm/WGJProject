@@ -37,7 +37,7 @@ public class CombatManager : MonoBehaviour
     private void Start()
     {
         uIManager = GameObject.Find("Canvas").GetComponent<UIManager>();
-        animationController = GetComponent<PlayerAnimationController>();
+        animationController = GameObject.Find("PlayerObject").GetComponent<PlayerAnimationController>();
         canFight = true;
     }
     private void OnTriggerEnter(Collider other)

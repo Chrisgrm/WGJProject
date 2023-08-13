@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
         dialogePanel.SetActive(false);
         inputField.SetActive(false);
         combatPanel.SetActive(false);
-
+        doorClosedPanel.SetActive(false);
     }
 
     internal void ActiveDoorClosed()
