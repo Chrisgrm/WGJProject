@@ -21,6 +21,7 @@ public class CombatManager : MonoBehaviour
 
     public Animator panelAnimator; // Animator del panel
     public GameObject combatPanel; // Panel de combate
+    public GameObject combatUI; // Cámara de combate
     public GameObject playerPosition; // Posición del jugador
 
     public Player playerController; // Script de control del jugador
@@ -30,6 +31,9 @@ public class CombatManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            // Desactivar movimiento del jugador
+            playerController.DisableMovement();
+            
             combatPanel.SetActive(true); // Activar panel
             panelAnimator.SetTrigger("FadeStart"); // Iniciar animación de entrada
 
@@ -100,7 +104,7 @@ public class CombatManager : MonoBehaviour
     private IEnumerator StartCombatSequence()
     {
         // Esperar a que termine la animación de entrada (ajustar la duración)
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.0f);
 
         // Cambiar a la cámara 2D
         cameraController.SwitchToCombatCamera(enemyIndex);
@@ -108,14 +112,13 @@ public class CombatManager : MonoBehaviour
         // Mover al jugador a la posición 2DenemyIndex
         playerController.transform.position = playerPosition.transform.position;
 
-        // Desactivar movimiento del jugador
-        playerController.DisableMovement();
-
         // Activar animación de salida
         panelAnimator.SetTrigger("FadeEnd");
 
         // Esperar a que termine la animación de salida (ajustar la duración)
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.0f);
+
+        combatUI.SetActive(true); // Activar UI de combate
 
         // Iniciar combate
         StartCombat();
