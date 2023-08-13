@@ -49,6 +49,8 @@ public class CombatManager : MonoBehaviour
             if (canFight)
             {
                 playerController.DisableMovement();
+                animationController.SetIdle();
+                //animationController.SetTalk();
                 //uIManager.
                 panelAnimator.SetTrigger("FadeStart"); // Iniciar animación de entrada
 
@@ -63,7 +65,7 @@ public class CombatManager : MonoBehaviour
     public void StartCombat()
     {
         playerWin = false;
-        animationController.SetTalk();
+        
         // Elegir ataque enemigo al azar
         int attackIndex = Random.Range(0, enemyAttacks.Length);
         string enemyAttack = enemyAttacks[attackIndex];

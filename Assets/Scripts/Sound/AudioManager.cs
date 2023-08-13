@@ -60,8 +60,9 @@ public class AudioManager : MonoBehaviour
     }
 
     // Reproducir sonido de pasos
-    public void PlayFootstepSound(int clipIndex)
+    public void PlayFootstepSound()
     {
+        int clipIndex = UnityEngine.Random.Range(0, footstepsClips.Length);
         PlaySound(footstepsSource, footstepsClips, clipIndex);
     }
 
