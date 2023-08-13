@@ -27,6 +27,7 @@ public class CombatManager : MonoBehaviour
 
     public Player playerController; // Script de control del jugador
     public CameraController cameraController;
+    public PlayerAnimationController animationController;
     private UIManager uIManager;
     private bool playerCanAttack;
     private int plantLife;
@@ -36,6 +37,7 @@ public class CombatManager : MonoBehaviour
     private void Start()
     {
         uIManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+        animationController = GetComponent<PlayerAnimationController>();
         canFight = true;
     }
     private void OnTriggerEnter(Collider other)
@@ -61,6 +63,7 @@ public class CombatManager : MonoBehaviour
     public void StartCombat()
     {
         playerWin = false;
+        animationController.SetTalk();
         // Elegir ataque enemigo al azar
         int attackIndex = Random.Range(0, enemyAttacks.Length);
         string enemyAttack = enemyAttacks[attackIndex];
@@ -160,6 +163,7 @@ public class CombatManager : MonoBehaviour
     {
         correctResponses = 0; // Reiniciar contador
         StartCoroutine(InactiveController());
+        animationController.SetDefeat();
         // Efectos de derrota
         playerController.transform.localScale *= 0.9f; // Hacer al jugador más pequeño
         uIManager.DeactivateBattle();
@@ -208,8 +212,9 @@ public class CombatManager : MonoBehaviour
         if (!isDefeat && playerController.transform.localScale.x < 1)
         {
             playerController.transform.localScale = Vector3.one; // Restaurar la escala del jugador
-        }            
-        
+        }
+
+        animationController.SetIdle();
         playerController.EnableMovement();
 
         if (isDefeat)

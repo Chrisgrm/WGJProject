@@ -7,6 +7,7 @@ public class NPC : MonoBehaviour
 {
     private CameraController cameraController;
     private Player player;
+    public PlayerAnimationController animationController;
 
 
     public int npcId;
@@ -25,6 +26,7 @@ public class NPC : MonoBehaviour
         cameraController = GameObject.Find("CameraController").GetComponent<CameraController>();
         player = GameObject.Find("PlayerObject").GetComponentInChildren<Player>();
         uIManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+        animationController = GetComponent<PlayerAnimationController>();
         canTalk = true;
     }
 
@@ -105,6 +107,7 @@ public class NPC : MonoBehaviour
         player.SetThirdPerson();
         cameraController.Switch2ThirdPerson();
         player.EnableMovement();
+        animationController.SetInteract();
         StartCoroutine(CanTalk());
     }
 
