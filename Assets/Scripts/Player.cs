@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     float rotationSpeed = 20;
     bool isFirstPerson;
+    private bool canChangeSize;
     bool blokedMovement;
     bool isMoving;
     Transform targetPosition;
@@ -22,19 +23,20 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        isFirstPerson = true;
+        isFirstPerson = false;
         isMoving = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
         if (!blokedMovement)
         {
             if (isFirstPerson)
             {
                 FirstPersonMovement();
-
             }
             else
             {
@@ -68,6 +70,12 @@ public class Player : MonoBehaviour
 
 
 
+    }
+
+    public void SetThirdPerson()
+    {
+        isFirstPerson = false;
+        canChangeSize = true;
     }
 
     public void BlockMovement()
