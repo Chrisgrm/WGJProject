@@ -1,19 +1,25 @@
 using UnityEngine;
 using Cinemachine;
 
-public class CameraController: MonoBehaviour
+public class CameraController : MonoBehaviour
 {
+    //esto sirve pa monda!
     public CinemachineVirtualCamera firstPersonCamera;
     public CinemachineVirtualCamera thirdPersonCamera;
     public CinemachineVirtualCamera topDownCamera;
+    public CinemachineVirtualCamera combatCamera,
+        combatCamera1,
+        combatCamera2;
 
-    public GameObject cameraThirdPerson, cameraFirstPerson, cameraTopDown;
+    public GameObject cameraThirdPerson,
+        cameraFirstPerson,
+        cameraTopDown;
 
     private int activeCameraIndex = 0;
+    private CinemachineVirtualCamera previousCamera;
 
     private void Start()
     {
-
         SwitchCamera(activeCameraIndex);
     }
 
@@ -26,7 +32,6 @@ public class CameraController: MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.V))
         {
-            
             SwitchThird2Person();
         }
     }
@@ -36,11 +41,45 @@ public class CameraController: MonoBehaviour
         firstPersonCamera.gameObject.SetActive(index == 0);
         thirdPersonCamera.gameObject.SetActive(index == 1);
         topDownCamera.gameObject.SetActive(index == 2);
-    } 
-    
+    }
+
     private void SwitchThird2Person()
     {
         cameraFirstPerson.SetActive(false);
         cameraThirdPerson.SetActive(true);
+    }
+
+    public void SwitchToCombatCamera(int cameraIndex)
+    {
+        previousCamera = firstPersonCamera.gameObject.activeSelf
+            ? firstPersonCamera
+            : thirdPersonCamera;
+
+
+        cameraThirdPerson.gameObject.SetActive(false);
+        cameraFirstPerson.gameObject.SetActive(false);
+        
+        switch (cameraIndex)
+        {
+            case 0:
+                combatCamera.gameObject.SetActive(true);
+                break;
+            case 1:
+                combatCamera1.gameObject.SetActive(true);
+                break;
+            case 2:
+                combatCamera2.gameObject.SetActive(true);
+                break;
+            
+            default:
+                Debug.Log("Opción no válida");
+                break;
+        }
+    }
+
+    public void SwitchToPreviousCamera()
+    {
+        combatCamera.gameObject.SetActive(false);
+        previousCamera.gameObject.SetActive(true);
     }
 }
