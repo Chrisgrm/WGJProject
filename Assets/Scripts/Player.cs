@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     bool blokedMovement;
     bool isMoving;
     Transform targetPosition;
-    int keyFragments;
+    public int keyFragments;
 
 
     public float mouseSensibility = 2.0f;

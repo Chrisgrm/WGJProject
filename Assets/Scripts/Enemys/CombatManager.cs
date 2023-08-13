@@ -52,7 +52,6 @@ public class CombatManager : MonoBehaviour
             {
                 playerController.DisableMovement();
                 animationController.SetIdle();
-                //animationController.SetTalk();
                 //uIManager.
                 panelAnimator.SetTrigger("FadeStart"); // Iniciar animación de entrada
 
@@ -67,6 +66,8 @@ public class CombatManager : MonoBehaviour
     public void StartCombat()
     {
         playerWin = false;
+
+        animationController.SetTalk();
         
         // Elegir ataque enemigo al azar
         int attackIndex = Random.Range(0, enemyAttacks.Length);
@@ -186,6 +187,7 @@ public class CombatManager : MonoBehaviour
     {
         correctResponses = 0; // Reiniciar contador
         StartCoroutine(InactiveController());
+        animationController.SetDefeat();
         animationController.SetDefeat();
         // Efectos de derrota
         playerController.transform.localScale *= 0.9f; // Hacer al jugador más pequeño

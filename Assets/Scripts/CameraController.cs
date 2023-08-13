@@ -12,6 +12,7 @@ public class CameraController : MonoBehaviour
         combatCamera1,
         combatCamera2;
 
+    public CinemachineVirtualCamera doorCamera;
     public GameObject cameraThirdPerson, cameraFirstPerson, cameraTopDown, cameraNPC0, cameraNPC1, cameraNPC2;
 
     private int activeCameraIndex = 0;
@@ -44,6 +45,7 @@ public class CameraController : MonoBehaviour
         combatCamera.gameObject.SetActive(false);
         combatCamera1.gameObject.SetActive(false);
         combatCamera2.gameObject.SetActive(false);
+        doorCamera.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -162,5 +164,11 @@ public class CameraController : MonoBehaviour
     {
         combatCamera.gameObject.SetActive(false);
         previousCamera.gameObject.SetActive(true);
+    }
+
+    public void SwitchToDoorCamera()
+    {
+        DeactivateAllCameras();
+        doorCamera.gameObject.SetActive(true);
     }
 }
