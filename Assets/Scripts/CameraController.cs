@@ -19,23 +19,36 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
+
         SwitchCamera(activeCameraIndex);
         cameraNPC0.SetActive(false);
+
+
+        //SwitchCamera(activeCameraIndex);
+        cameraFirstPerson.SetActive(false);
+        cameraThirdPerson.SetActive(true);
+        cameraTopDown.SetActive(false);
+
         cameraNPC1.SetActive(false);
         cameraNPC2.SetActive(false);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            activeCameraIndex = (activeCameraIndex + 1) % 3;
-            SwitchCamera(activeCameraIndex);
-        }
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            SwitchThird2Person();
-        }
+   
+
+        //if (Input.GetKeyDown(KeyCode.C))
+        //{
+        //    activeCameraIndex = (activeCameraIndex + 1) % 3;
+        //    SwitchCamera(activeCameraIndex);
+        //}
+        //if (Input.GetKeyDown(KeyCode.V))
+        //{
+        //    Switch2ThirdPerson;
+
+
+        //}
+
     }
 
     public void ActivateCameraNPC(int v)
@@ -65,10 +78,24 @@ public class CameraController : MonoBehaviour
         topDownCamera.gameObject.SetActive(index == 2);
     }
 
-    private void SwitchThird2Person()
+    public void Switch2FirstPerson()
+    {
+        cameraFirstPerson.SetActive(true);
+        cameraThirdPerson.SetActive(false);
+        cameraTopDown.SetActive(true);
+    } 
+    public void Switch2ThirdPerson()
+
     {
         cameraFirstPerson.SetActive(false);
         cameraThirdPerson.SetActive(true);
+        cameraTopDown.SetActive(false);
+    } 
+    public void Switch2TopDown()
+    {
+        cameraFirstPerson.SetActive(false);
+        cameraThirdPerson.SetActive(false);
+        cameraTopDown.SetActive(true);
     }
 
     public void SwitchToCombatCamera(int cameraIndex)

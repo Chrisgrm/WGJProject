@@ -16,22 +16,42 @@ public class Player : MonoBehaviour
     [SerializeField]
     float rotationSpeed = 20;
     bool isFirstPerson;
+
     bool canMove = true;
+
+    private bool canChangeSize;
+    bool blokedMovement;
+    bool isMoving;
+    Transform targetPosition;
+
 
     public float mouseSensibility = 2.0f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        isFirstPerson = true;
+
+        isFirstPerson = false;
+        isMoving = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isFirstPerson)
+
+
+        if (!blokedMovement)
         {
-            FirstPersonMovement();
+            if (isFirstPerson)
+            {
+                FirstPersonMovement();
+            }
+            else
+            {
+                ThirdPersonMovement();
+            }
+
         }
         else
         {
@@ -42,7 +62,19 @@ public class Player : MonoBehaviour
         {
             isFirstPerson = !isFirstPerson;
         }
+
     }
+
+    public void SetThirdPerson()
+    {
+        isFirstPerson = false;
+        canChangeSize = true;
+    }
+
+    //public void BlockMovement()
+    //{
+    //    blokedMovement = true;
+    //}
 
     private void ThirdPersonMovement()
     {
