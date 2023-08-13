@@ -77,23 +77,33 @@ public class Player : MonoBehaviour
         {
             if (!gamePaused)
             {
-                Cursor.visible = true;
-                uIManager.ActivePause();
-                Time.timeScale = 0;
-                gamePaused = true;
+                PauseGame();
             }
             else
             {
-                gamePaused = false;
-                uIManager.DeactivePause();              
-                Cursor.visible = false;
-
-                Time.timeScale = 1;
+                UnpausGame();
             }
         
             
         }
 
+    }
+
+    public void PauseGame()
+    {
+        Cursor.visible = true;
+        uIManager.ActivePause();
+        Time.timeScale = 0;
+        gamePaused = true;
+    }
+
+    public void UnpausGame()
+    {
+        gamePaused = false;
+        uIManager.DeactivePause();
+        Cursor.visible = false;
+
+        Time.timeScale = 1;
     }
 
     public void SetThirdPerson()
@@ -175,6 +185,8 @@ public class Player : MonoBehaviour
     internal void GetKey()
     {
         keyFragments++;
+        uIManager.ActiveInGameKey();
+        uIManager.ActiveKeyImage(keyFragments);
     }
     public int Getkeys()
     {

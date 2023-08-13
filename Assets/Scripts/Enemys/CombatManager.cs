@@ -7,7 +7,7 @@ using TMPro;
 public class CombatManager : MonoBehaviour
 {
 
-    private string[] playerAttacks = {"feo","feisimo","no" };
+    private string[] playerAttacks = {"confianza","autoestima","paz" };
     private List<string> playerAttacksUnused;
    // public TMP_Text timerText;
     public TMP_Text correctResponseText;
@@ -238,9 +238,9 @@ public class CombatManager : MonoBehaviour
 
     private void RestarPlayerWords()
     {
-        playerAttacks[0] = "feo"; 
-        playerAttacks[1] = "feisimo"; 
-        playerAttacks[2] = "no"; 
+        playerAttacks[0] = "confianza"; 
+        playerAttacks[1] = "autoestima"; 
+        playerAttacks[2] = "paz"; 
     }
 
     private void EndCombatSequence(bool isDefeat)
