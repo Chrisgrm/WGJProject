@@ -16,8 +16,10 @@ public class CombatManager : MonoBehaviour
     private string[] enemyAttacks = { "Ataque 1", "Ataque 2", "Ataque 3" };
 
     private int keyFragments = 0;
+
     [SerializeField]
     private int enemyIndex;
+    private int correctResponses = 0;
 
     public Animator panelAnimator; // Animator del panel
     public GameObject combatPanel; // Panel de combate
@@ -33,7 +35,7 @@ public class CombatManager : MonoBehaviour
         {
             // Desactivar movimiento del jugador
             playerController.DisableMovement();
-            
+
             combatPanel.SetActive(true); // Activar panel
             panelAnimator.SetTrigger("FadeStart"); // Iniciar animación de entrada
 
@@ -63,30 +65,39 @@ public class CombatManager : MonoBehaviour
 
     public void Victory()
     {
-        keyFragments++;
+        correctResponses++;
+        int requiredResponses = enemyIndex + 1;
 
-        // Entregar fragmento de llave al jugador
-        // ...
+        if (correctResponses == requiredResponses)
+        {
+            keyFragments++;
+            correctResponses = 0; // Reiniciar contador
 
-        if (keyFragments == 3)
-        {
-            // Victoria total en el juego
-            // Puedes cargar una escena de victoria, mostrar un mensaje, etc.
+            if (keyFragments == 3)
+            {
+                // Victoria total en el juego
+            }
+            else
+            {
+                // Devolver al espacio de juego al jugador
+                StartCoroutine(EndCombatSequence());
+            }
         }
-        else
-        {
-            // Devolver al espacio de juego al jugador
-            StartCoroutine(EndCombatSequence());
-        }
+        // else
+        // {
+        //     StartCombat(); // Iniciar el siguiente turno si aún no ha alcanzado las respuestas requeridas
+        // }
     }
 
     public void Defeat()
     {
+        correctResponses = 0; // Reiniciar contador
+
         // Efectos de derrota
-        // ...
+        playerController.transform.localScale *= 0.9f; // Hacer al jugador más pequeño
 
         // Devolver al espacio de juego al jugador
-        StartCoroutine(EndCombatSequence());
+        StartCoroutine(EndCombatSequence(true));
     }
 
     public void CheckResponse()
@@ -124,12 +135,26 @@ public class CombatManager : MonoBehaviour
         StartCombat();
     }
 
-    private IEnumerator EndCombatSequence()
+    private IEnumerator EndCombatSequence(bool isDefeat = false)
     {
         cameraController.SwitchToPreviousCamera();
 
+        if (!isDefeat && playerController.transform.localScale.x < 1)
+        {
+            playerController.transform.localScale = Vector3.one; // Restaurar la escala del jugador
+        }
+            
         playerController.EnableMovement();
 
+        if (isDefeat)
+        {
+            cameraController.Switch2FirstPerson(); // Activar cámara de primera persona
+        }     
+        else
+        {
+            cameraController.Switch2ThirdPerson(); // Activar cámara de tercera persona
+        }
+        
         yield return null; // Reemplaza esto con la lógica adecuada
     }
 
