@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
         //    isFirstPerson = !isFirstPerson;
         //}
 
-        if (Input.GetKeyDown(KeyCode.M)) // Detectar la pulsación de la tecla 'M'
+        if (Input.GetKeyDown(KeyCode.Alpha9)) // Detectar la pulsación de la tecla 'M'
         {
             animationController.SetEasterEgg(); // Llamar al método SetEasterEgg
         }
@@ -115,7 +115,8 @@ public class Player : MonoBehaviour
     private void FirstPersonMovement()
     {
         if (!canMove) return;
-        
+
+          
         GetInput();
         Vector3 movimiento = new Vector3(horizontalInput, 0.0f, verticalInput);
         Vector3 movimientoGlobal = transform.TransformDirection(movimiento);

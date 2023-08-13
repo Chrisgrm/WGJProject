@@ -14,8 +14,12 @@ public class UIManager : MonoBehaviour
     public GameObject combatPanel;
     public Transform enemy0WordPosition;
     public Transform enemy1WordPosition;
+    public GameObject easterEggPanel;
+
+
     public Transform enemy2WordPosition;
     public GameObject doorClosedPanel;
+    private bool inputActive;
 
 
     // Start is called before the first frame update
@@ -25,6 +29,16 @@ public class UIManager : MonoBehaviour
         inputField.SetActive(false);
         combatPanel.SetActive(false);
         doorClosedPanel.SetActive(false);
+        easterEggPanel.SetActive(false);
+    }
+    internal void ActivatePanelEasterEgg()
+    {
+        easterEggPanel.SetActive(true);
+    }
+
+    internal void DeactivatePanelEasterEgg()
+    {
+        easterEggPanel.SetActive(false);
     }
 
     internal void ActiveDoorClosed()
@@ -79,11 +93,16 @@ public class UIManager : MonoBehaviour
 
     internal void ActivateInputField()
     {
+        if (!inputActive)
+        {
         StartCoroutine(ActivateInputCorroutine());
+
+        }
     }
 
     IEnumerator ActivateInputCorroutine()
     {
+        inputActive = true;
         yield return new WaitForSeconds(1);
         inputField.SetActive(true);
         print("Se puede escribir");
@@ -93,6 +112,7 @@ public class UIManager : MonoBehaviour
     }
     public void DeactivateInput()
     {
+        inputActive = false;
         print("final");
         inputField.SetActive(false);
         TMP_InputField input = inputField.GetComponentInChildren<TMP_InputField>();     

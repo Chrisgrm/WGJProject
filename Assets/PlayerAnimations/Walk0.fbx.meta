@@ -57,17 +57,17 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.3078612
+      - time: 0.3344772
         functionName: PlayFootstepSound
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: ee1378cb16d226141aad215c64e8b6eb, type: 3}
+        objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.81071585
         functionName: PlayFootstepSound
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: ee1378cb16d226141aad215c64e8b6eb, type: 3}
+        objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

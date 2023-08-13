@@ -7,7 +7,8 @@ using TMPro;
 public class CombatManager : MonoBehaviour
 {
 
-    private string[] playerAttacks = {"feo","puto","no" };
+    private string[] playerAttacks = {"feo","feisimo","no" };
+    private List<string> playerAttacksUnused;
    // public TMP_Text timerText;
     public TMP_Text correctResponseText;
 
@@ -24,6 +25,7 @@ public class CombatManager : MonoBehaviour
     public Animator panelAnimator; // Animator del panel 
  
     public GameObject playerPosition; // Posición del jugador
+    public GameObject playerPosition2; // Posición del jugador
 
     public Player playerController; // Script de control del jugador
     public CameraController cameraController;
@@ -91,10 +93,27 @@ public class CombatManager : MonoBehaviour
             {
                 if(uIManager.GetInputText() == words[0] || uIManager.GetInputText() == words[1] || uIManager.GetInputText() == words[2])
                 {
+
+                    words[0] = "unapalabraquejamasvayanaescribir2";
+                    
                     uIManager.RestarInput();
                     print("hice daño");
                     PlantGetDamage();
                     
+                }else if (uIManager.GetInputText() == words[1])
+                {
+                    words[1] = "unapalabraquejamasvayanaescribir2";
+                   
+                    uIManager.RestarInput();
+                    print("hice daño");
+                    PlantGetDamage();
+                }
+                else if (uIManager.GetInputText() == words[2])
+                {
+                    words[2] = "unapalabraquejamasvayanaescribir2";
+                    uIManager.RestarInput();
+                    print("hice daño");
+                    PlantGetDamage();
                 }
                
                 if (!playerCanAttack)
@@ -155,10 +174,12 @@ public class CombatManager : MonoBehaviour
 
     private void KillPlant()
     {
+
+        print("panta muerta");
+        Timer(true);
         canFight = false;
         uIManager.DeactivateBattle();
         EndCombatSequence(false);
-        Timer(true);
     }
 
     public void Defeat()
@@ -170,6 +191,9 @@ public class CombatManager : MonoBehaviour
         playerController.transform.localScale *= 0.9f; // Hacer al jugador más pequeño
         uIManager.DeactivateBattle();
         // Devolver al espacio de juego al jugador
+        // Mover al jugador a la posición 2DenemyIndex
+        playerController.transform.position = playerPosition2.transform.position;
+
         EndCombatSequence(true);
     }
 
@@ -198,6 +222,7 @@ public class CombatManager : MonoBehaviour
 
         // Activar animación de salida
         panelAnimator.SetTrigger("FadeEnd");
+        RestarPlayerWords();
 
         // Esperar a que termine la animación de salida (ajustar la duración)
         uIManager.ActivateBattle();
@@ -207,6 +232,13 @@ public class CombatManager : MonoBehaviour
 
         // Iniciar combate
         StartCombat();
+    }
+
+    private void RestarPlayerWords()
+    {
+        playerAttacks[0] = "feo"; 
+        playerAttacks[1] = "feisimo"; 
+        playerAttacks[2] = "no"; 
     }
 
     private void EndCombatSequence(bool isDefeat)
@@ -239,7 +271,7 @@ public class CombatManager : MonoBehaviour
     private IEnumerator Timer(bool stop)
     {
         playerCanAttack = true;
-        float timeRemaining = 8; // Por ejemplo, 10 segundos
+        float timeRemaining = 5; // Por ejemplo, 10 segundos
         if (stop) { timeRemaining = 0; }
         while (timeRemaining > 0.1)
         {
