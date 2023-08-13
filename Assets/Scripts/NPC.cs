@@ -17,6 +17,7 @@ public class NPC : MonoBehaviour
     private int currentSentenceIndex;
     private UIManager uIManager;
     private bool isConversationActive;
+    bool canTalk;
 
 
     void Start()
@@ -24,6 +25,7 @@ public class NPC : MonoBehaviour
         cameraController = GameObject.Find("CameraController").GetComponent<CameraController>();
         player = GameObject.Find("PlayerObject").GetComponentInChildren<Player>();
         uIManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+        canTalk = true;
     }
 
 
@@ -58,39 +60,79 @@ public class NPC : MonoBehaviour
         }
     }
 
+    private void ActivateInputField()
+    {
+        uIManager.ActivateInputField();       
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
-        player.transform.position = playerPosition.transform.position;
-        player.DisableMovement();
-        cameraController.ActivateCameraNPC(npcId);
+
+        if (canTalk)
+        {
+            player.transform.position = playerPosition.transform.position;
+            player.DisableMovement();
+            cameraController.ActivateCameraNPC(npcId); 
+            StartConversation();
+        }
+       
 
         
         //player.MovePlayerAutomatic(playerPositionRef);
 
         //player.BlockMovement();
         //player.MovePlayerAutomatic(playerPositionRef);
-        StartConversation();
+     
 
         
     }
 
     private void StopConversation()
     {
+        canTalk = false;
         uIManager.EndDialog();
         currentSentenceIndex = 0;
-        cameraController.Switch2ThirdPerson();
-        StartView();
-        player.SetThirdPerson();
+        //cameraController.Switch2ThirdPerson();
         isConversationActive = false;
-        player.EnableMovement();
+        StartTopDownView();
+        
     }
 
-    private void StartView()
+    private void LiberatePlayer()
     {
+        uIManager.DeactivateInput();
+        player.SetThirdPerson();
+        cameraController.Switch2ThirdPerson();
+        player.EnableMovement();
+        StartCoroutine(CanTalk());
+    }
+
+    IEnumerator CanTalk()
+    {
+        yield return new WaitForSeconds(3);
+        canTalk = true;
+    }
+    private void StartTopDownView()
+    {
+        ActivateInputField();
         cameraController.SetTopDownCamera(npcId);
         cameraController.Switch2TopDown();
+        StartCoroutine(CheckWord("gracias"));
 
+    }
+
+    IEnumerator CheckWord(string word)
+    {
+
+        
+        while(uIManager.GetInputText()!= word)
+        {
+
+            yield return null; 
+        }
+
+        LiberatePlayer();
     }
 
     private void StartConversation()
