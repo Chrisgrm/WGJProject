@@ -613,7 +613,7 @@ GameObject:
   - component: {fileID: 533362240}
   - component: {fileID: 533362242}
   m_Layer: 0
-  m_Name: Camera2DEnemy0
+  m_Name: CameraEnemy0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -630,8 +630,7 @@ Transform:
   m_LocalPosition: {x: 2.63, y: 0.12, z: -2.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 683773224}
+  m_Children: []
   m_Father: {fileID: 884834685}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -723,104 +722,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &683773223
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 683773224}
-  - component: {fileID: 683773227}
-  - component: {fileID: 683773226}
-  - component: {fileID: 683773225}
-  m_Layer: 0
-  m_Name: BackGround2D
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &683773224
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 683773223}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 0.25, y: 0, z: 6.32}
-  m_LocalScale: {x: 1.8375, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 533362240}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
---- !u!64 &683773225
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 683773223}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &683773226
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 683773223}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 73ecb329e49d0fd42b9698a8cec77b2d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &683773227
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 683773223}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,6 +1099,12 @@ MonoBehaviour:
   firstPersonCamera: {fileID: 963194227}
   thirdPersonCamera: {fileID: 1536458600}
   topDownCamera: {fileID: 2067223242}
+  combatCamera: {fileID: 0}
+  combatCamera2: {fileID: 0}
+  combatCamera3: {fileID: 0}
+  cameraThirdPerson: {fileID: 0}
+  cameraFirstPerson: {fileID: 0}
+  cameraTopDown: {fileID: 0}
 --- !u!1 &884834681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1306,7 +1213,6 @@ MonoBehaviour:
   secondCamera: {fileID: 533362242}
   combatPanel: {fileID: 1926351856}
   playerPosition: {fileID: 682324251}
-  backGround2D: {fileID: 683773223}
   playerController: {fileID: 1892531451}
 --- !u!65 &884834687
 BoxCollider:
@@ -2579,7 +2485,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3041d32d1f2afa94290bb0bb8c71ee70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 10
+  speed: 0
+  targetCam: {fileID: 0}
+  rotationSpeed: 20
   mouseSensibility: 2
 --- !u!1 &1926351856
 GameObject:

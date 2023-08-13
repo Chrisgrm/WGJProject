@@ -16,15 +16,15 @@ public class CombatManager : MonoBehaviour
     private string[] enemyAttacks = { "Ataque 1", "Ataque 2", "Ataque 3" };
 
     private int keyFragments = 0;
+    [SerializeField]
+    private int enemyIndex;
 
     public Animator panelAnimator; // Animator del panel
-    public Camera secondCamera; // Cámara para la perspectiva 2D
     public GameObject combatPanel; // Panel de combate
     public GameObject playerPosition; // Posición del jugador en 2D
-    public GameObject backGround2D; // Fondo 2D
-    public Player playerController; // Script de control del jugador
 
-    
+    public Player playerController; // Script de control del jugador
+    public CameraController cameraController;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -44,13 +44,14 @@ public class CombatManager : MonoBehaviour
         int attackIndex = Random.Range(0, enemyAttacks.Length);
         string enemyAttack = enemyAttacks[attackIndex];
         enemyAttackText.text = enemyAttack;
-        
+
         // Establecer la respuesta correcta en función del ataque elegido
         SetCorrectResponse();
 
         // Iniciar contador de tiempo
         StartCoroutine(Timer());
     }
+
     private void SetCorrectResponse()
     {
         correctResponseText.text = correctResponse;
@@ -99,24 +100,22 @@ public class CombatManager : MonoBehaviour
     private IEnumerator StartCombatSequence()
     {
         // Esperar a que termine la animación de entrada (ajustar la duración)
-        yield return new WaitForSeconds(1.0f); 
-
-        backGround2D.SetActive(true); // Activar fondo 2D
+        yield return new WaitForSeconds(1.0f);
 
         // Cambiar a la cámara 2D
-        secondCamera.enabled = true;
+        cameraController.SwitchToCombatCamera(enemyIndex);
 
-        // Mover al jugador a la posición 2D
+        // Mover al jugador a la posición 2DenemyIndex
         playerController.transform.position = playerPosition.transform.position;
 
         // Desactivar movimiento del jugador
-        //playerController.DisableMovement();
+        playerController.DisableMovement();
 
         // Activar animación de salida
         panelAnimator.SetTrigger("FadeEnd");
 
         // Esperar a que termine la animación de salida (ajustar la duración)
-        yield return new WaitForSeconds(1.0f); 
+        yield return new WaitForSeconds(1.0f);
 
         // Iniciar combate
         StartCombat();
@@ -124,10 +123,10 @@ public class CombatManager : MonoBehaviour
 
     private IEnumerator EndCombatSequence()
     {
-        // Realizar un proceso inverso al de StartCombatSequence
-        // Cambiar de la perspectiva 2D a 3D, etc.
-        // ...
-        
+        cameraController.SwitchToPreviousCamera();
+
+        playerController.EnableMovement();
+
         yield return null; // Reemplaza esto con la lógica adecuada
     }
 
@@ -140,7 +139,7 @@ public class CombatManager : MonoBehaviour
             timerText.text = "Tiempo restante: " + timeRemaining.ToString("F2");
             yield return null;
         }
-        
+
         // Tiempo agotado
     }
 }

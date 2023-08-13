@@ -6,19 +6,20 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Rigidbody rb;
+
     [SerializeField]
     private float speed;
     public Transform targetCam;
-    float horizontalInput ;
+    float horizontalInput;
     float verticalInput;
+
     [SerializeField]
     float rotationSpeed = 20;
     bool isFirstPerson;
-    bool blokedMovement;
-    bool isMoving;
-    Transform targetPosition;
+    bool canMove = true;
 
     public float mouseSensibility = 2.0f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -29,45 +30,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!blokedMovement)
+        if (isFirstPerson)
         {
-            if (isFirstPerson)
-            {
-                FirstPersonMovement();
-
-            }
-            else
-            {
-                ThirdPersonMovement();
-            }
-
-        }
-
-
-        if (isMoving)
-        {
-            Vector3 targetDirection = targetPosition.position - transform.position;
-            Vector3 movement = targetDirection.normalized * speed * Time.deltaTime;
-
-            // Mueve al personaje hacia la posición deseada
-            transform.Translate(movement);
-
-            // Comprueba si el personaje ha llegado a la posición deseada
-            if (Vector3.Distance(transform.position, targetPosition.position) < 0.1f)
-            {
-                isMoving = false;
-            }
+            FirstPersonMovement();
         }
 
         if (Input.GetKeyDown(KeyCode.F))
         {
             isFirstPerson = !isFirstPerson;
         }
-     
-
-
-
-
     }
 
     public void BlockMovement()
@@ -77,6 +48,8 @@ public class Player : MonoBehaviour
 
     private void ThirdPersonMovement()
     {
+        if (!canMove) return;
+
         GetInput();
         Vector3 movement = new Vector3(0, 0.0f, verticalInput);
         Vector3 globalMovement = transform.TransformDirection(movement);
@@ -105,7 +78,7 @@ public class Player : MonoBehaviour
             Vector3 movement = targetDirection.normalized* speed * Time.deltaTime;
             print("movimiento: "+ movement);
 
-            // Mueve al personaje hacia la posición deseada
+            // Mueve al personaje hacia la posiciï¿½n deseada
 
             transform.Translate(movement);
             //rb.MovePosition(movement);
@@ -119,22 +92,28 @@ public class Player : MonoBehaviour
     }
     private void FirstPersonMovement()
     {
-        GetInput();      
+        if (!canMove) return;
+        
+        GetInput();
         Vector3 movimiento = new Vector3(horizontalInput, 0.0f, verticalInput);
-        Vector3 movimientoGlobal = transform.TransformDirection(movimiento);   
+        Vector3 movimientoGlobal = transform.TransformDirection(movimiento);
         rb.AddForce(movimientoGlobal * speed);
         transform.rotation = Quaternion.Euler(0, targetCam.rotation.eulerAngles.y, 0);
     }
 
     private void GetInput()
     {
-        horizontalInput =  Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    isMoving = true;
-    //    targetPosition = other.transform;
-    //}
+    public void DisableMovement()
+    {
+        canMove = false;
+    }
+
+    public void EnableMovement()
+    {
+        canMove = true;
+    }
 }
