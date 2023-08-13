@@ -20,6 +20,8 @@ public class UIManager : MonoBehaviour
     public Transform enemy2WordPosition;
     public GameObject doorClosedPanel;
     private bool inputActive;
+    public GameObject pausePanel;
+    public GameObject thanksPanel;
 
 
     // Start is called before the first frame update
@@ -30,6 +32,7 @@ public class UIManager : MonoBehaviour
         combatPanel.SetActive(false);
         doorClosedPanel.SetActive(false);
         easterEggPanel.SetActive(false);
+        thanksPanel.SetActive(false);
     }
     internal void ActivatePanelEasterEgg()
     {
@@ -74,6 +77,16 @@ public class UIManager : MonoBehaviour
         combatPanel.SetActive(false);
         DeactivateInput();
     }
+
+    internal void ActivePause()
+    {
+        pausePanel.SetActive(true);
+    }
+    internal void DeactivePause()
+    {
+        pausePanel.SetActive(false);
+    }
+
     public void ActivateDialog(string textoInicial)
     {
         dialogePanel.SetActive(true);
@@ -124,6 +137,16 @@ public class UIManager : MonoBehaviour
     {
         TMP_InputField input = inputField.GetComponentInChildren<TMP_InputField>();
         input.text = "";
+    }
+
+    internal void DeactiveThanksAdvice()
+    {
+        thanksPanel.SetActive(false);
+    }
+
+    internal void ActiveThanksAdvice()
+    {
+        thanksPanel.SetActive(true);
     }
 
     public string GetInputText()

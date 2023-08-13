@@ -109,6 +109,7 @@ public class NPC : MonoBehaviour
         player.EnableMovement();
         animationController.SetInteract();
         StartCoroutine(CanTalk());
+        uIManager.DeactiveThanksAdvice();
     }
 
     IEnumerator CanTalk()
@@ -121,6 +122,7 @@ public class NPC : MonoBehaviour
         ActivateInputField();
         cameraController.SetTopDownCamera(npcId);
         cameraController.Switch2TopDown();
+        uIManager.ActiveThanksAdvice();
         StartCoroutine(CheckWord("gracias"));
 
     }
