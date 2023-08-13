@@ -14,7 +14,7 @@ public class CombatManager : MonoBehaviour
 
     [SerializeField]
     private string correctResponse;
-    private string[] enemyAttacks = { "Ataque 1", "Ataque 2", "Ataque 3" };
+    private string[] enemyAttacks = { "Te has visto en un espejo? todos pueden verlo, no encajas en este mundo.", "Nunca puedes hacer nada bien. Solo estás perdiendo el tiempo aquí", "Esa sonrisa tuya, ¿crees que la gente no ve lo falsa que es?" };
 
     private int keyFragments = 0;
 

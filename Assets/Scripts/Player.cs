@@ -28,11 +28,14 @@ public class Player : MonoBehaviour
 
     public float mouseSensibility = 2.0f;
     public PlayerAnimationController animationController;
+    private UIManager uIManager;
+    private bool gamePaused;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         animationController = GetComponent<PlayerAnimationController>();
+        uIManager = GameObject.Find("Canvas").GetComponent<UIManager>();
 
         isFirstPerson = false;
         isMoving = false;
@@ -43,7 +46,7 @@ public class Player : MonoBehaviour
     void Update()
     {
 
-
+        Cursor.visible = false;
         if (!blokedMovement)
         {
             if (isFirstPerson)
@@ -69,6 +72,26 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha9)) // Detectar la pulsación de la tecla 'M'
         {
             animationController.SetEasterEgg(); // Llamar al método SetEasterEgg
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!gamePaused)
+            {
+                Cursor.visible = true;
+                uIManager.ActivePause();
+                Time.timeScale = 0;
+                gamePaused = true;
+            }
+            else
+            {
+                gamePaused = false;
+                uIManager.DeactivePause();              
+                Cursor.visible = false;
+
+                Time.timeScale = 1;
+            }
+        
+            
         }
 
     }
