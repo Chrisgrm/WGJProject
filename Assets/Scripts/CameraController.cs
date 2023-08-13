@@ -1,5 +1,6 @@
 using UnityEngine;
 using Cinemachine;
+using System;
 
 public class CameraController: MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class CameraController: MonoBehaviour
     public CinemachineVirtualCamera thirdPersonCamera;
     public CinemachineVirtualCamera topDownCamera;
 
-    public GameObject cameraThirdPerson, cameraFirstPerson, cameraTopDown;
+    public GameObject cameraThirdPerson, cameraFirstPerson, cameraTopDown, cameraNPC1, cameraNPC2, cameraNPC3;
 
     private int activeCameraIndex = 0;
 
@@ -15,6 +16,9 @@ public class CameraController: MonoBehaviour
     {
 
         SwitchCamera(activeCameraIndex);
+        cameraNPC1.SetActive(false);
+        cameraNPC2.SetActive(false);
+        cameraNPC3.SetActive(false);
     }
 
     private void Update()
@@ -28,6 +32,28 @@ public class CameraController: MonoBehaviour
         {
             
             SwitchThird2Person();
+        }
+    }
+
+    public void ActivateCameraNPC(int v)
+    {
+        cameraFirstPerson.SetActive(false);
+        cameraThirdPerson.SetActive(false);
+        switch (v)
+        {
+            case 1:
+                cameraNPC1.SetActive(true);
+                print("camara 1");
+
+                break;
+
+            case 2:
+                cameraNPC2.SetActive(true);
+                break;
+            case 3:
+                cameraNPC3.SetActive(true);
+                break;
+
         }
     }
 
