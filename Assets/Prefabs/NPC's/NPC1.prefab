@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4063464131158329012}
   m_LocalRotation: {x: 0, y: -0.2787396, z: 0, w: 0.9603667}
-  m_LocalPosition: {x: -0.11, y: 0, z: 0.08}
+  m_LocalPosition: {x: 18.9, y: 0, z: -6.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -208,9 +208,15 @@ MonoBehaviour:
   playerPosition: {fileID: 4273190434221113484}
   playerPositionRef: {fileID: 0}
   dialogueSentences:
-  - a
-  - v
-  - c
+  - "La seguridad se manifiesta en c\xF3mo te mantienes firme ante los desaf\xEDos,
+    sin importar las dudas que surjan."
+  - Has aprendido a tener seguridad de como eres, como te ves y como quieres vivir
+    tu vida
+  - "La seguridad no es arrogancia, es una profunda comprensi\xF3n de qui\xE9n eres
+    y qu\xE9 puedes lograr."
+  - 'Diles "confianza" a las plantas para que se calmen. '
+  - La belleza esta en tu interior, y en tu interior a veces encuentras la guia que
+    necesitas.
 --- !u!65 &4273190433197164114
 BoxCollider:
   m_ObjectHideFlags: 0

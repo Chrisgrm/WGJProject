@@ -968,69 +968,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1341399683, guid: de74ac0b9c71a3142b3743b5a24f9428, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1341399683, guid: de74ac0b9c71a3142b3743b5a24f9428, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1341399683, guid: de74ac0b9c71a3142b3743b5a24f9428, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 426603753}
-    - target: {fileID: 1341399683, guid: de74ac0b9c71a3142b3743b5a24f9428, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1341399683, guid: de74ac0b9c71a3142b3743b5a24f9428, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Return2Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 1341399683, guid: de74ac0b9c71a3142b3743b5a24f9428, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1341399683, guid: de74ac0b9c71a3142b3743b5a24f9428, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 1534425470, guid: de74ac0b9c71a3142b3743b5a24f9428, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1534425470, guid: de74ac0b9c71a3142b3743b5a24f9428, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1534425470, guid: de74ac0b9c71a3142b3743b5a24f9428, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2351431120279520812}
-    - target: {fileID: 1534425470, guid: de74ac0b9c71a3142b3743b5a24f9428, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1534425470, guid: de74ac0b9c71a3142b3743b5a24f9428, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PauseGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 1534425470, guid: de74ac0b9c71a3142b3743b5a24f9428, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Player, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1534425470, guid: de74ac0b9c71a3142b3743b5a24f9428, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 1891021333, guid: de74ac0b9c71a3142b3743b5a24f9428, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2351431120279520812}
-    - target: {fileID: 1891021333, guid: de74ac0b9c71a3142b3743b5a24f9428, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UnpausGame
-      objectReference: {fileID: 0}
     - target: {fileID: 6976714483033644275, guid: de74ac0b9c71a3142b3743b5a24f9428, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1120,20 +1068,12 @@ PrefabInstance:
       value: Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 6976714484405525953, guid: de74ac0b9c71a3142b3743b5a24f9428, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 983.6868
-      objectReference: {fileID: 0}
-    - target: {fileID: 6976714484405525953, guid: de74ac0b9c71a3142b3743b5a24f9428, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 349.5521
-      objectReference: {fileID: 0}
-    - target: {fileID: 6976714484405525953, guid: de74ac0b9c71a3142b3743b5a24f9428, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 88.10333
+      value: 4.5084
       objectReference: {fileID: 0}
     - target: {fileID: 6976714484405525953, guid: de74ac0b9c71a3142b3743b5a24f9428, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 149.77612
+      value: -44
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de74ac0b9c71a3142b3743b5a24f9428, type: 3}
@@ -1961,19 +1901,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3815175799692215803, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 2.9988098e-16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3815175799692215803, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 1.4524987e-16
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3815175799692215803, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.97519064
+      value: 0.9999371
       objectReference: {fileID: 0}
     - target: {fileID: 3815175799692215803, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.221367
+      value: 0.011218056
       objectReference: {fileID: 0}
     - target: {fileID: 3815175799851959280, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_Follow
@@ -1993,11 +1933,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3815175799851959281, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.300979
+      value: 6.690979
       objectReference: {fileID: 0}
     - target: {fileID: 3815175799851959281, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.34939
+      value: 2.8693905
       objectReference: {fileID: 0}
     - target: {fileID: 3815175799851959281, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2045,19 +1985,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3815175800189224015, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -3.172093e-15
+      value: 0.000000008057613
       objectReference: {fileID: 0}
     - target: {fileID: 3815175800189224015, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 2.6144864e-15
+      value: -0.0000000030076646
       objectReference: {fileID: 0}
     - target: {fileID: 3815175800189224015, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.97647065
+      value: 0.99999666
       objectReference: {fileID: 0}
     - target: {fileID: 3815175800189224015, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.21565033
+      value: 0.0026021004
       objectReference: {fileID: 0}
     - target: {fileID: 3815175801203669740, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2065,51 +2005,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3815175801203669740, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.5094876
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3815175801203669740, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.3201357
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3815175801203669740, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.0005452846
+      value: -0.00052100036
       objectReference: {fileID: 0}
     - target: {fileID: 3815175801203669740, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.000018376937
+      value: 0.00016196173
       objectReference: {fileID: 0}
     - target: {fileID: 3815175801203669740, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9255389
+      value: 0.9985822
       objectReference: {fileID: 0}
     - target: {fileID: 3815175801203669740, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.37865227
+      value: -0.05322943
       objectReference: {fileID: 0}
     - target: {fileID: 6890510389435984187, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_FollowOffset.y
-      value: 4.008186
+      value: 3.980968
       objectReference: {fileID: 0}
     - target: {fileID: 6890510389435984187, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_FollowOffset.z
-      value: -5.661223
+      value: -5.665485
       objectReference: {fileID: 0}
     - target: {fileID: 6890510389546213053, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_FollowOffset.y
-      value: 4.008186
+      value: 3.980968
       objectReference: {fileID: 0}
     - target: {fileID: 6890510389546213053, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_FollowOffset.z
-      value: -5.661223
+      value: -5.665485
       objectReference: {fileID: 0}
     - target: {fileID: 6890510391180777019, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_FollowOffset.y
-      value: 4.008186
+      value: 3.980968
       objectReference: {fileID: 0}
     - target: {fileID: 6890510391180777019, guid: 8768c658986e56147bab90d22383a090, type: 3}
       propertyPath: m_FollowOffset.z
-      value: -5.661223
+      value: -5.665485
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8768c658986e56147bab90d22383a090, type: 3}
@@ -2461,32 +2401,6 @@ PrefabInstance:
       propertyPath: animationController
       value: 
       objectReference: {fileID: 2351431120279520809}
-    - target: {fileID: 514919654815458970, guid: 5cd0152c9f454a8449917337e4cbfc2b, type: 3}
-      propertyPath: dialogueSentences.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 514919654815458970, guid: 5cd0152c9f454a8449917337e4cbfc2b, type: 3}
-      propertyPath: dialogueSentences.Array.data[0]
-      value: "No importa lo que los dem\xE1s piensen de ti. Lo que importa es lo
-        que t\xFA piensas de ti misma."
-      objectReference: {fileID: 0}
-    - target: {fileID: 514919654815458970, guid: 5cd0152c9f454a8449917337e4cbfc2b, type: 3}
-      propertyPath: dialogueSentences.Array.data[1]
-      value: Has aprendido a confiar en ti misma
-      objectReference: {fileID: 0}
-    - target: {fileID: 514919654815458970, guid: 5cd0152c9f454a8449917337e4cbfc2b, type: 3}
-      propertyPath: dialogueSentences.Array.data[2]
-      value: "Cuando conf\xEDas en ti misma, no tienes que impresionar a nadie m\xE1s"
-      objectReference: {fileID: 0}
-    - target: {fileID: 514919654815458970, guid: 5cd0152c9f454a8449917337e4cbfc2b, type: 3}
-      propertyPath: dialogueSentences.Array.data[3]
-      value: "Despues de todo, una vez comprendes esto, ves las cosas desde otro
-        angulo\u2026mpresionar a nadie m\xE1s"
-      objectReference: {fileID: 0}
-    - target: {fileID: 514919654815458970, guid: 5cd0152c9f454a8449917337e4cbfc2b, type: 3}
-      propertyPath: dialogueSentences.Array.data[4]
-      value: Diles "autoconfianza" a las plantas para que se calmen.
-      objectReference: {fileID: 0}
     - target: {fileID: 514919654815458972, guid: 5cd0152c9f454a8449917337e4cbfc2b, type: 3}
       propertyPath: m_Name
       value: NPC2
@@ -2953,14 +2867,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1084371807}
     m_Modifications:
-    - target: {fileID: 1220374831055743720, guid: 6ec48cb1180cb85419a97756dc70a22d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 18.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1220374831055743720, guid: 6ec48cb1180cb85419a97756dc70a22d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -6.4
-      objectReference: {fileID: 0}
     - target: {fileID: 4273190433197164115, guid: 6ec48cb1180cb85419a97756dc70a22d, type: 3}
       propertyPath: playerPositionRef
       value: 
@@ -2969,34 +2875,6 @@ PrefabInstance:
       propertyPath: animationController
       value: 
       objectReference: {fileID: 2351431120279520809}
-    - target: {fileID: 4273190433197164115, guid: 6ec48cb1180cb85419a97756dc70a22d, type: 3}
-      propertyPath: dialogueSentences.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273190433197164115, guid: 6ec48cb1180cb85419a97756dc70a22d, type: 3}
-      propertyPath: dialogueSentences.Array.data[0]
-      value: "La seguridad se manifiesta en c\xF3mo te mantienes firme ante los desaf\xEDos,
-        sin importar las dudas que surjan."
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273190433197164115, guid: 6ec48cb1180cb85419a97756dc70a22d, type: 3}
-      propertyPath: dialogueSentences.Array.data[1]
-      value: Has aprendido a tener seguridad de como eres, como te ves y como quieres
-        vivir tu vida
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273190433197164115, guid: 6ec48cb1180cb85419a97756dc70a22d, type: 3}
-      propertyPath: dialogueSentences.Array.data[2]
-      value: "La seguridad no es arrogancia, es una profunda comprensi\xF3n de qui\xE9n
-        eres y qu\xE9 puedes lograr."
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273190433197164115, guid: 6ec48cb1180cb85419a97756dc70a22d, type: 3}
-      propertyPath: dialogueSentences.Array.data[3]
-      value: 'Diles "seguridad" a las plantas para que se calmen. '
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273190433197164115, guid: 6ec48cb1180cb85419a97756dc70a22d, type: 3}
-      propertyPath: dialogueSentences.Array.data[4]
-      value: La belleza esta en tu interior, y en tu interior a veces encuentras
-        la guia que necesitas.
-      objectReference: {fileID: 0}
     - target: {fileID: 4273190433197164118, guid: 6ec48cb1180cb85419a97756dc70a22d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3110,35 +2988,6 @@ PrefabInstance:
       propertyPath: animationController
       value: 
       objectReference: {fileID: 2351431120279520809}
-    - target: {fileID: 5587575744781424422, guid: a89818fff88776c4eaedda9eb9fb2147, type: 3}
-      propertyPath: dialogueSentences.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5587575744781424422, guid: a89818fff88776c4eaedda9eb9fb2147, type: 3}
-      propertyPath: dialogueSentences.Array.data[0]
-      value: La verdadera fuerza radica en mantener la calma incluso en medio de
-        la tormenta
-      objectReference: {fileID: 0}
-    - target: {fileID: 5587575744781424422, guid: a89818fff88776c4eaedda9eb9fb2147, type: 3}
-      propertyPath: dialogueSentences.Array.data[1]
-      value: Aprendiste a estar en paz contigo misma.
-      objectReference: {fileID: 0}
-    - target: {fileID: 5587575744781424422, guid: a89818fff88776c4eaedda9eb9fb2147, type: 3}
-      propertyPath: dialogueSentences.Array.data[2]
-      value: La paz interior es un escudo que te protege de la violencia externa.
-      objectReference: {fileID: 0}
-    - target: {fileID: 5587575744781424422, guid: a89818fff88776c4eaedda9eb9fb2147, type: 3}
-      propertyPath: dialogueSentences.Array.data[3]
-      value: Es un camino que eliges seguir, incluso cuando la violencia te rodea.
-      objectReference: {fileID: 0}
-    - target: {fileID: 5587575744781424422, guid: a89818fff88776c4eaedda9eb9fb2147, type: 3}
-      propertyPath: dialogueSentences.Array.data[4]
-      value: 'Diles "paz" a las plantas para que se calmen. '
-      objectReference: {fileID: 0}
-    - target: {fileID: 5587575744781424422, guid: a89818fff88776c4eaedda9eb9fb2147, type: 3}
-      propertyPath: dialogueSentences.Array.data[5]
-      value: 'Creo que estas lista, es momento que te liberes. '
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a89818fff88776c4eaedda9eb9fb2147, type: 3}
 --- !u!114 &5673099302634976757 stripped

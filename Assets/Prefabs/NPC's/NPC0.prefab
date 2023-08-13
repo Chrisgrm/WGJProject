@@ -246,8 +246,12 @@ MonoBehaviour:
   playerPosition: {fileID: 5587575744602162357}
   playerPositionRef: {fileID: 0}
   dialogueSentences:
-  - hola
-  - hola
+  - La verdadera fuerza radica en mantener la calma incluso en medio de la tormenta
+  - Aprendiste a estar en paz contigo misma.
+  - La paz interior es un escudo que te protege de la violencia externa.
+  - Es un camino que eliges seguir, incluso cuando la violencia te rodea.
+  - 'Diles "paz" a las plantas para que se calmen. '
+  - 'Creo que estas lista, es momento que te liberes. '
 --- !u!65 &5587575744781424421
 BoxCollider:
   m_ObjectHideFlags: 0

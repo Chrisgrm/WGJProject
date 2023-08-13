@@ -106,8 +106,13 @@ MonoBehaviour:
   playerPosition: {fileID: 514919655567899206}
   playerPositionRef: {fileID: 0}
   dialogueSentences:
-  - a
-  - s
+  - "No importa lo que los dem\xE1s piensen de ti. Lo que importa es lo que t\xFA
+    piensas de ti misma."
+  - Has aprendido a confiar en ti misma
+  - "Cuando conf\xEDas en ti misma, no tienes que impresionar a nadie m\xE1s"
+  - "Despues de todo, una vez comprendes esto, ves las cosas desde otro angulo\u2026mpresionar
+    a nadie m\xE1s"
+  - Diles "autoestima" a las plantas para que se calmen.
 --- !u!65 &514919654815458971
 BoxCollider:
   m_ObjectHideFlags: 0
