@@ -14,7 +14,10 @@ public class CombatManager : MonoBehaviour
 
     [SerializeField]
     private string correctResponse;
-    private string[] enemyAttacks = { "Te has visto en un espejo? todos pueden verlo, no encajas en este mundo.", "Nunca puedes hacer nada bien. Solo estás perdiendo el tiempo aquí", "Esa sonrisa tuya, ¿crees que la gente no ve lo falsa que es?" };
+    private string[] enemyAttacks = { "Te has visto en un espejo? todos pueden verlo, no encajas en este mundo.", 
+        "Nunca puedes hacer nada bien. Solo estás perdiendo el tiempo aquí", "Esa sonrisa tuya, ¿crees que la gente no ve lo falsa que es?", 
+        "jajajaj lo sabia, eres poco femenina…", "Jajajaj mira lo insignificante que eres !!!",
+        "Cada vez que hablas, solo empeoras las cosas. ¿Por qué no te callas de una vez?" ,"Eres una vergüenza. No importa cuánto intentes, siempre decepcionas.", "Nunca lograrás nada. Cada intento tuyo es solo una burla."};
 
     private int keyFragments = 0;
 

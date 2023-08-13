@@ -37,6 +37,7 @@ public class UIManager : MonoBehaviour
         doorClosedPanel.SetActive(false);
         easterEggPanel.SetActive(false);
         thanksPanel.SetActive(false);
+        pausePanel.SetActive(false);
         key1Image.gameObject.SetActive(false);
         key2Image.gameObject.SetActive(false);
         key3Image.gameObject.SetActive(false);
