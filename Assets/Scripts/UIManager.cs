@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     public Transform enemy0WordPosition;
     public Transform enemy1WordPosition;
     public GameObject easterEggPanel;
+    public GameObject inGamePanel;
 
 
     public Transform enemy2WordPosition;
@@ -22,6 +23,9 @@ public class UIManager : MonoBehaviour
     private bool inputActive;
     public GameObject pausePanel;
     public GameObject thanksPanel;
+    public Image key1Image;
+    public Image key2Image;
+    public Image key3Image;
 
 
     // Start is called before the first frame update
@@ -33,6 +37,9 @@ public class UIManager : MonoBehaviour
         doorClosedPanel.SetActive(false);
         easterEggPanel.SetActive(false);
         thanksPanel.SetActive(false);
+        key1Image.gameObject.SetActive(false);
+        key2Image.gameObject.SetActive(false);
+        key3Image.gameObject.SetActive(false);
     }
     internal void ActivatePanelEasterEgg()
     {
@@ -153,5 +160,23 @@ public class UIManager : MonoBehaviour
     {
         TMP_InputField input= inputField.GetComponentInChildren<TMP_InputField>();
         return input.text;
+    }
+
+    internal void ActiveInGameKey()
+    {
+        inGamePanel.SetActive(true);
+    }
+
+    public void ActiveKeyImage(int cantidad) {
+        if (cantidad == 1)
+        {
+            key1Image.gameObject.SetActive(true);
+        }        if (cantidad == 2)
+        {
+            key2Image.gameObject.SetActive(true);
+        }        if (cantidad == 3)
+        {
+            key3Image.gameObject.SetActive(true);
+        }
     }
 }
