@@ -10,7 +10,7 @@ public class TopDownCamera : MonoBehaviour
 
     private void Update()
     {
-        Vector3 newPosition = target.position - Vector3.forward * distance + Vector3.up * height;
+        Vector3 newPosition = target.position + Vector3.up * height;
         transform.position = newPosition;
         transform.LookAt(target.position);
     }

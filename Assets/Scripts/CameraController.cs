@@ -1,17 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
-public class CameraController : MonoBehaviour
+public class CameraController: MonoBehaviour
 {
-    public Camera firstPersonCamera;
-    public Camera thirdPersonCamera;
-    public Camera topDownCamera;
+    public CinemachineVirtualCamera firstPersonCamera;
+    public CinemachineVirtualCamera thirdPersonCamera;
+    public CinemachineVirtualCamera topDownCamera;
+
+    public GameObject cameraThirdPerson, cameraFirstPerson, cameraTopDown;
 
     private int activeCameraIndex = 0;
 
     private void Start()
     {
+
         SwitchCamera(activeCameraIndex);
     }
 
@@ -22,6 +24,11 @@ public class CameraController : MonoBehaviour
             activeCameraIndex = (activeCameraIndex + 1) % 3;
             SwitchCamera(activeCameraIndex);
         }
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            
+            SwitchThird2Person();
+        }
     }
 
     private void SwitchCamera(int index)
@@ -29,5 +36,11 @@ public class CameraController : MonoBehaviour
         firstPersonCamera.gameObject.SetActive(index == 0);
         thirdPersonCamera.gameObject.SetActive(index == 1);
         topDownCamera.gameObject.SetActive(index == 2);
+    } 
+    
+    private void SwitchThird2Person()
+    {
+        cameraFirstPerson.SetActive(false);
+        cameraThirdPerson.SetActive(true);
     }
 }
